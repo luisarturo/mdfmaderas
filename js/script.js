@@ -1,9 +1,15 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const menuLinks = document.querySelectorAll(".menu a");
+  const menuLinks = document.querySelectorAll(".menu a, .side-menu a");
   const sections = document.querySelectorAll("section");
 
   function hideAllSections() {
-    sections.forEach(section => section.classList.remove("active"));
+    sections.forEach(section => {
+      section.style.display = "none";
+    });
+  }
+
+  function removeActiveClass() {
+    menuLinks.forEach(link => link.classList.remove("active"));
   }
 
   menuLinks.forEach(link => {
@@ -15,13 +21,23 @@ document.addEventListener("DOMContentLoaded", function () {
 
       if (targetSection) {
         hideAllSections(); // Oculta todas las secciones
-        targetSection.classList.add("active"); // Muestra la seleccionada
+        targetSection.style.display = "block"; // Muestra la sección seleccionada
+
+        removeActiveClass(); // Elimina la clase active de todos los enlaces
+        this.classList.add("active"); // Agrega la clase active al enlace seleccionado
       } else {
         console.error("Sección no encontrada:", targetId);
       }
     });
   });
 
-  // Mostrar la primera sección al cargar
-  sections[0].classList.add("active");
+  // Seleccionar la opción "Inicio" por defecto
+  const firstSection = sections[0];
+  const firstLink = menuLinks[0];
+
+  if (firstSection && firstLink) {
+    hideAllSections();
+    firstSection.style.display = "block"; // Muestra la primera sección
+    firstLink.classList.add("active"); // Marca el primer enlace como activo
+  }
 });

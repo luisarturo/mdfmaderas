@@ -172,7 +172,8 @@ nav {
   -ms-transition: all 0.3s ease-in-out;
 }
 
-.menu a:hover {
+.menu a:hover,
+.menu a.active {
   border: 3px solid var(--color-enlace-hover);
 }
 
@@ -251,16 +252,18 @@ nav {
   width: 100%;
 }
 
-/* Cambio de color al pasar el cursor */
+/* Efecto hover */
+.side-menu a:hover::after,
+.side-menu a.active::after {
+  width: 100%;
+}
+
 .side-menu a:hover {
   color: var(--color-sidebar-menu);
 }
 
+.side-menu li:hover::before,
 .side-menu li .active::before {
-  background-color: var(--color-sidebar-menu);
-}
-
-.side-menu li:hover::before {
   background-color: var(--color-sidebar-menu);
 }
 
