@@ -1,8 +1,12 @@
 document.addEventListener("DOMContentLoaded", function () {
   const menuLinks = document.querySelectorAll(".menu a");
-  const sideMenuLinks = document.querySelectorAll(".side-menu a");
   const sections = document.querySelectorAll("section");
-  const subSections = document.querySelectorAll("#inicio > section"); // Solo subsecciones dentro de "inicio"
+
+  // Menús laterales y subsecciones
+  const sideMenuInicio = document.querySelectorAll("#inicio .side-menu a");
+  const sideMenuServicio = document.querySelectorAll("#servicios .side-menu a");
+  const subSectionsInicio = document.querySelectorAll("#inicio > section");
+  const subSectionsServicio = document.querySelectorAll("#servicios > section");
 
   function hideAllSections() {
     sections.forEach(section => {
@@ -11,10 +15,12 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  function hideAllSubSections() {
+  function hideAllSubSections(subSections) {
     subSections.forEach(subSection => {
-      subSection.style.display = "none";
-      subSection.classList.remove("active");
+      if (subSection.id !== "video-gallery") {
+        subSection.style.display = "none";
+        subSection.classList.remove("active");
+      }
     });
   }
 
@@ -28,15 +34,21 @@ document.addEventListener("DOMContentLoaded", function () {
       hideAllSections();
       targetSection.style.display = "block";
       targetSection.classList.add("active");
+
       if (targetId === "inicio") {
-        hideAllSubSections();
-        selectFirstSideMenuOption();
+        hideAllSubSections(subSectionsServicio); // Oculta subsecciones de Servicio si venías de ahí
+        hideAllSubSections(subSectionsInicio);
+        selectFirstSideMenuOption(sideMenuInicio, subSectionsInicio);
+      } else if (targetId === "servicios") {
+        hideAllSubSections(subSectionsInicio); // Oculta subsecciones de Inicio si venías de ahí
+        hideAllSubSections(subSectionsServicio);
+        selectFirstSideMenuOption(sideMenuServicio, subSectionsServicio);
       }
     }
   }
 
-  function showSubSection(targetId) {
-    hideAllSubSections(); // Oculta todas las subsecciones antes de mostrar la nueva
+  function showSubSection(targetId, subSections) {
+    hideAllSubSections(subSections);
     const targetSubSection = document.getElementById(targetId);
     if (targetSubSection) {
       targetSubSection.style.display = "block";
@@ -54,41 +66,47 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  function handleSideMenuClick(link) {
+  function handleSideMenuClick(link, sideMenuGroup, subSections) {
     link.addEventListener("click", function (e) {
       e.preventDefault();
       const targetId = this.getAttribute("href").substring(1);
-      showSubSection(targetId);
-      removeActiveClass(sideMenuLinks);
-      removeActiveClassFromLi(sideMenuLinks);
+      showSubSection(targetId, subSections);
+      removeActiveClass(sideMenuGroup);
+      removeActiveClassFromLi(sideMenuGroup);
       this.classList.add("active");
-      this.parentElement.classList.add("active"); // Agregar la clase active al li
+      this.parentElement.classList.add("active");
     });
   }
 
   function removeActiveClassFromLi(linksGroup) {
     linksGroup.forEach(link => {
       link.classList.remove("active");
-      link.parentElement.classList.remove("active"); // Eliminar la clase active del li
+      if (link.parentElement) {
+        link.parentElement.classList.remove("active");
+      }
     });
   }
 
-  function selectFirstSideMenuOption() {
-    const firstSideMenuLink = document.querySelector(".side-menu a");
-    if (firstSideMenuLink) {
+  function selectFirstSideMenuOption(sideMenuGroup, subSections) {
+    if (sideMenuGroup.length > 0) {
+      const firstSideMenuLink = sideMenuGroup[0];
       const targetId = firstSideMenuLink.getAttribute("href").substring(1);
-      showSubSection(targetId);
-      removeActiveClass(sideMenuLinks);
-      removeActiveClassFromLi(sideMenuLinks);
+      showSubSection(targetId, subSections);
+      removeActiveClass(sideMenuGroup);
+      removeActiveClassFromLi(sideMenuGroup);
       firstSideMenuLink.classList.add("active");
-      firstSideMenuLink.parentElement.classList.add("active"); // Agregar la clase active al li
+      firstSideMenuLink.parentElement.classList.add("active");
     }
   }
 
+  // Agregar eventos a los enlaces del menú principal
   menuLinks.forEach(link => handleMenuClick(link, menuLinks));
-  sideMenuLinks.forEach(link => handleSideMenuClick(link));
 
-  // Seleccionar la opción "Inicio" por defecto
+  // Agregar eventos a los enlaces de cada menú lateral
+  sideMenuInicio.forEach(link => handleSideMenuClick(link, sideMenuInicio, subSectionsInicio));
+  sideMenuServicio.forEach(link => handleSideMenuClick(link, sideMenuServicio, subSectionsServicio));
+
+  // Mostrar la sección inicial por defecto
   const firstSection = sections[0];
   const firstLink = menuLinks[0];
 
@@ -97,12 +115,12 @@ document.addEventListener("DOMContentLoaded", function () {
     firstSection.style.display = "block";
     firstSection.classList.add("active");
     firstLink.classList.add("active");
-    hideAllSubSections(); // Asegura que las subsecciones están ocultas inicialmente
-    selectFirstSideMenuOption(); // Activa la primera opción del side-menu por defecto
+
+    hideAllSubSections(subSectionsInicio);
+    selectFirstSideMenuOption(sideMenuInicio, subSectionsInicio);
   }
 
   // MODAL
-  // Datos de cada botón
   const modalData = [
     {
       title: "Optimización de cortes",
@@ -110,7 +128,7 @@ document.addEventListener("DOMContentLoaded", function () {
       text: `Contamos con servicio de optimización de corte para un mejor aprovechamiento de los tableros buscando reducir el desperdicio. 
               A través de un software se calculan cuántos tableros se requieren para un proyecto, se define un diagrama de corte y la orientación de las vetas que tendrán cada pieza del proyecto:
               • Servicios de dimensionado.
-              • Servicios de Optimizacion de Cortes.`
+              • Servicios de Optimización de Cortes.`
     },
     {
       title: "Enchapados de cantos",
@@ -124,7 +142,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   ];
 
-  // Función para abrir el modal con el contenido dinámico
   function openModal(index) {
     const data = modalData[index];
     document.getElementById("modal-title").innerText = data.title;
@@ -133,12 +150,10 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("modal").style.display = "flex";
   }
 
-  // Función para cerrar el modal
   function closeModal() {
     document.getElementById("modal").style.display = "none";
   }
 
-  // Cierra el modal si se hace clic fuera del contenido
   window.onclick = function (event) {
     let modal = document.getElementById("modal");
     if (event.target === modal) {
@@ -146,17 +161,14 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   };
 
-  // Asignar eventos a los botones dinámicamente
   window.onload = function () {
     const buttons = document.querySelectorAll(".buttonContainer button");
-
     buttons.forEach((button, index) => {
       button.addEventListener("click", function () {
         openModal(index);
       });
     });
 
-    // Asignar evento para cerrar el modal
     document.getElementById("close-modal").addEventListener("click", closeModal);
   };
 });

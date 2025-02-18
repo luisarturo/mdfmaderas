@@ -297,6 +297,22 @@ section.active {
   opacity: 1;
 }
 
+#optimizacion {
+  position: relative;
+  height: 80vh;
+  max-height: 80vh;
+  overflow-y: auto;
+  padding: 20px;
+  border-radius: 10px;
+  scrollbar-width: thin;
+}
+
+/* Personalización del scrollbar para navegadores basados en Webkit (Chrome, Safari) */
+#optimizacion::-webkit-scrollbar {
+  width: 8px;
+}
+
+
 /* BUTTON */
 .buttonContainer {
   display: flex;
@@ -412,4 +428,71 @@ button:hover:after {
 
 .modal-body div {
   flex: 1;
+}
+
+/* Galeria */
+
+.video-gallery {
+  display: grid !important;
+  grid-template-columns: repeat(3, 320px);
+  gap: 20px;
+  justify-content: start;
+  align-content: center;
+  margin-top: 7rem;
+}
+
+.video-item {
+  background: #222;
+  padding: 10px;
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 300px;
+  /* Ajuste el tamaño total del item */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.video-item video {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.video-item p {
+  color: white;
+  font-size: 12px;
+  max-width: 94%;
+  margin: 10px;
+}
+
+/* Efecto al pasar el mouse */
+.video-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 10px 20px rgba(255, 255, 255, 0.3);
+}
+
+/* Asegura que los videos tengan el mismo tamaño */
+.video-item iframe {
+  width: 100%;
+  height: 200px;
+  /* Ajusta la altura del video */
+  border-radius: 10px;
+  object-fit: cover;
+  /* Hace que el video se ajuste sin deformarse */
+}
+
+/* Responsivo: dos videos por fila en tablets */
+@media screen and (max-width: 1024px) {
+  .video-gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Responsivo: un video por fila en móviles */
+@media screen and (max-width: 768px) {
+  .video-gallery {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
