@@ -1,18 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MDF Maderas - Todo para el Carpintero</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-    />
     <link rel="stylesheet" href="/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
   </head>
   <body>
+    <!-- Video de fondo -->
     <div id="videoBackground">
       <iframe
         width="100%"
@@ -20,299 +19,358 @@
         src="https://www.youtube.com/embed/LkRc8aJ9o-o?autoplay=1&mute=1&loop=1&playlist=LkRc8aJ9o-o"
         title="YouTube video player"
         frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-sharel; mute"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; mute"
         referrerpolicy="strict-origin-when-cross-origin"
         allowfullscreen
-      >
-      </iframe>
+      ></iframe>
     </div>
-    <!-- Overlay transparente encima del video para evitar clics -->
     <div id="videoOverlay"></div>
     <div class="content">
+      <!-- Encabezado -->
       <header>
+        <div class="logo">
+          <img
+            src="/image/MDF-LOGO-300x169.png"
+            width="280"
+            height="90"
+            style="max-height: 169px; height: auto"
+            alt="MDF Maderas Logo"
+          />
+        </div>
         <nav>
-          <div class="logo">
-            <img
-              src="/image/MDF-LOGO-300x169.png"
-              width="280"
-              height="90"
-              style="max-height: 169px; height: auto"
-              alt="MDF Maderas Logo"
-            />
-          </div>
           <ul class="menu">
             <li><a href="#inicio">Inicio</a></li>
             <li><a href="#servicios">Servicios</a></li>
-            <li><a href="#contactanos">Contactanos</a></li>
+            <li><a href="#contactanos">Contáctanos</a></li>
           </ul>
         </nav>
       </header>
 
-      <!-- Secciones de la Página -->
-      <section id="inicio">
-        <nav class="side-menu">
-          <ul>
-            <li><a href="#quienes_somos">¿Quienes somos?</a></li>
-            <li><a href="#que_hacemos">¿Que hacemos?</a></li>
-            <li><a href="#nuestros_servicios">Nuestros Servicios</a></li>
-            <li><a href="#nuestra_tecnologia">Nuestra Tecnologia</a></li>
-          </ul>
-        </nav>
+      <!-- Secciones -->
+      <main>
+        <section id="inicio">
+          <nav class="side-menu">
+            <ul>
+              <li><a href="#quienes_somos">¿Quiénes somos?</a></li>
+              <li><a href="#que_hacemos">¿Qué hacemos?</a></li>
+              <li><a href="#nuestros_servicios">Nuestros Servicios</a></li>
+              <li><a href="#nuestra_tecnologia">Nuestra Tecnología</a></li>
+            </ul>
+          </nav>
+          <section id="quienes_somos" class="b1 section">
+            <h1>¿Quiénes somos?</h1>
+            <p>
+              MDF MADERAS, Empresa 100% Sonorense, con más de 28 años de
+              experiencia en la comercialización, procesos y tratamiento de
+              maderas y sus derivados, ofertando servicios, asesoría y productos
+              de la más alta calidad existente en el mercado internacional. MDF
+              MADERAS se dedica de igual manera a la venta, fabricación y
+              distribución de tarimas y embalajes de madera para la industria en
+              general, asegurando el cumplimiento de los requisitos de los
+              clientes en tiempo y forma, con la mejor atención, calidad y al
+              menor costo, lo que nos convierte en la empresa líder dentro del
+              mercado.
+            </p>
+            <p>
+              Nuestros 28 años de experiencia en la madera, nos permite ofrecer
+              a nuestros clientes la mejor solución y asesoría para sus
+              necesidades y con ello contribuir a la efectividad, rentabilidad y
+              seguridad en cada uno de sus procesos.
+            </p>
+          </section>
+          <section id="que_hacemos" class="b2 section">
+            <h1>¿Qué hacemos?</h1>
+            <p>
+              Nuestra empresa fue fundada en el año 1993, se dedica a la venta,
+              fabricación y distribución de productos de origen forestal como
+              tarimas y empaques de madera para la industria de madera,
+              asegurando el cumplimiento de los requisitos de los clientes en
+              tiempo y forma, con la mejor atención, calidad y al menor costo,
+              lo que nos convierte en una empresa líder dentro del mercado.
+            </p>
+            <p>
+              Contamos con personal calificado en la madera, por lo que
+              ofrecemos a nuestros clientes la mejor calidad en productos y
+              asesoría especializada con relación a sus necesidades y con ello
+              contribuimos a la efectividad, rentabilidad y seguridad de cada
+              uno de los procesos que realizamos.
+            </p>
+            <p>
+              Invitamos a visitar nuestras instalaciones y conocer la tecnología
+              de punta que MDF Maderas ofrece, y que harán que tus proyectos
+              cuenten con la mejor calidad.
+            </p>
+          </section>
+          <section id="nuestros_servicios" class="b3 section">
+            <h1>Nuestros Servicios</h1>
+            <p>
+              MDF MADERAS, dispone de un completo personal técnico que le
+              ayudará a superar cualquier desafío. También disponemos apoyo
+              local, que incluye Optimización de Cortes, además de la ayuda de
+              expertos quienes, si usted lo aprueba, pueden ayudarlo en Todo Su
+              Proyecto.
+            </p>
+            <p>
+              MDF MADERAS pone a su servicio la mejores Tecnologías Existentes
+              en maquila de diseño y asistencia en desarrollo de proyectos en
+              las Siguientes Areas:
+            </p>
 
-        <section id="quienes_somos" class="b1 section">
-          <h1>¿quienes somos?</h1>
-          <p>
-            MDF MADERAS, Empresa 100% Sonorense, Con mas de 28 años de
-            Experiencia en la Comercialización, procesos y tratamiento de
-            maderas y sus derivados, ofertando servicios, Asesoría y productos
-            de la mas alta calidad existente en el mercado Internacional. MDF
-            MADERAS se dedica de igual manera a la venta, fabricación y
-            distribución de tarimas y embalajes de madera para la industria en
-            general, asegurando el cumplimiento de los requisitos de los
-            clientes en tiempo y forma, con la mejor atención, calidad y al
-            menor costo, lo que nos convierte en la empresa líder dentro del
-            mercado.
-          </p>
-          <p>
-            Nuestros 28 años de experiencia en la madera, nos permite ofrecer a
-            nuestros clientes la mejor solución y asesoría para sus necesidades
-            y con ello contribuir a la efectividad, rentabilidad y seguridad en
-            cada uno de sus procesos.
-          </p>
-        </section>
-        <section id="que_hacemos" class="b2 section">
-          <h1>¿Que hacemos?</h1>
-          <p>
-            Nuestra empresa fue fundada en el año 1993, se dedica a la venta,
-            fabricación y distribución de productos de origen forestal cómo,
-            tarimas y empaques de madera para la industria de madera, asegurando
-            el cumplimiento de los requisitos de los clientes en tiempo y forma,
-            con la mejor atención, calidad y al menor costo, lo que nos
-            convierte en una empresa líder dentro del mercado.
-          </p>
-          <p>
-            Contamos con personal calificado en la madera, por lo que ofrecemos
-            a nuestros clientes la mejor calidad en productos y asesoría
-            especializada con relación a sus necesidades y con ello contribuimos
-            a la efectividad, rentabilidad y seguridad de cada uno de los
-            procesos que realizamos.
-          </p>
-          <p>
-            Invitamos a visitar nuestras instalaciones y conocer la tecnología
-            de punta que MDF Maderas ofrece, y que harán que tus proyectos
-            cuenten con la mejor calidad.
-          </p>
-        </section>
-        <section id="nuestros_servicios" class="b3 section">
-          <h1>Nuestros Servicios</h1>
-          <p>
-            MDF MADERAS, dispone de un completo Personal técnico que le ayudará
-            a superar cualquier desafío. También disponemos apoyo local, que
-            incluye Optimización de Cortes, además de la ayuda de expertos
-            quienes, si usted lo aprueba, pueden ayudarlo en Todo Su Proyecto.
-          </p>
-          <p>
-            MDF MADERAS pone a su servicio la mejores Tecnologías Existentes en
-            maquila de diseño y asistencia en desarrollo de proyectos en las
-            Siguientes Areas:
-          </p>
-
-          <div class="buttonContainer">
-            <button>Optimización de cortes</button>
-            <button>Enchapados de cantos</button>
-            <button>Mecanizados en CNC</button>
-          </div>
-        </section>
-        <section id="nuestra_tecnologia" class="b4 section">
-          <h1>Nuestra Tecnologia</h1>
-          <p>
-            Contamos con tecnología de Punta para ofrecer Cortes y Dimensiones
-            confiables y con ello asegurar La Perfeccion en los Diseños de Tus
-            Proyectos.
-          </p>
-        </section>
-      </section>
-
-      <section id="servicios">
-        <nav class="side-menu">
-          <ul>
-            <li><a href="#optimizacion">Optimización</a></li>
-            <li><a href="#cortes">Cortes</a></li>
-            <li><a href="#tutoriales">tutoriales</a></li>
-          </ul>
-        </nav>
-
-        <section id="optimizacion" class="b1 section">
-          <h1>Optimización</h1>
-          <p>
-            ¿Sabes los beneficios de nuestro servicio de optimización de cortes?
-          </p>
-          <ul>
-            <li>Conoce cuantos tableros necesitas para realizar tu proyecto</li>
-            <li>
-              Opten el mayor aprovechamiento de las dimensiones de los tableros
-            </li>
-            <li>Cotiza en linea o directo en tienda</li>
-            <li>
-              Conoce el precio final de materia prima y servicio de todo tu
-              proyecto, para que puedas cotizar a tus clientes
-            </li>
-            <li>Etiqueta tus piezas cortadas para identificarlas</li>
-            <li>
-              Ahorra tiempo de armado solicitando el servicio de flejado por
-              modulos
-            </li>
-          </ul>
-
-          <p>
-            Crea libremente con los mas de 80 diseños y colores que tenemos en
-            tableros de melamina que te permitirán crear espacios estéticos y en
-            tendencia.
-          </p>
-          <p>Contamos con marcas como:</p>
-          <ul>
-            <li>MASISA</li>
-            <li>CUBRICA</li>
-            <li>DURAPLAY</li>
-            <li>REHAU (Distribuidores oficiales)</li>
-            <li>MUY PRONTO TECNOTABLA (Distribuidores oficiales)</li>
-          </ul>
-        </section>
-        <section id="cortes" class="b2 section">
-          <h1>Cortes</h1>
-          <p>
-            Te presentamos nuestra área de corte y enchapado, aquí es donde
-            nuestro equipo trabaja tus proyectos con maquinaria de punta para
-            ofrecerte cortes perfectos y la mejor calidad en recubrimiento de
-            cantos.
-          </p>
-          <ul>
-            <li>Cortes perfectos y limpios debido a su sistema automatizado</li>
-            <li>
-              Diferenciamos cada pieza para facilitar su reconocimiento con un
-              proceso de etiquetado
-            </li>
-            <li>Tu proyecto se realiza en menos tiempo.</li>
-            <li>Optimizamos el uso del tablero</li>
-          </ul>
-          <p>Contamos con:</p>
-          <ul>
-            <li>¡Garantía 100% de calidad!</li>
-          </ul>
-          <p>
-            Sabemos que lo mas importante es la calidad de nuestro servicio, por
-            eso confía en los mejores y comprueba que tus cantos de PVC salen
-            sin defectos perfilados y redondeados.
-          </p>
-          <p>
-            Compruébalo tu mismo!, y ofrece a tus clientes un excelente acabado
-            en cada uno de tus muebles, maquila tus proyectos en MDF maderas
-            ¡Todo para el carpintero!
-          </p>
-        </section>
-        <section id="tutoriales" class="b3 section">
-          <h1>Tutoriales</h1>
-          <p>
-            Aprende a realizar muebles, ensamblar piezas, poner manijas y muchas
-            cosas más de forma profesional.
-          </p>
-          <section id="video-gallery" class="video-gallery">
-            <div class="video-item">
-              <iframe
-                width="250"
-                height="200"
-                src="https://www.youtube.com/embed/kBeDZkdXgM0?si=BS9FsTrPkRhsImCM"
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin"
-                allowfullscreen
-              ></iframe>
-              <p>
-                Tutorial de instalación de cajones con correderas de extensión
-                de cierre suave en un ensamblado simple
-              </p>
-            </div>
-            <div class="video-item">
-              <iframe
-                width="250"
-                height="200"
-                src="https://www.youtube.com/embed/aPUhB5fXY3k?si=uBl9B1HAdFsGySAG"
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin"
-                allowfullscreen
-              ></iframe>
-              <p>
-                Video tutorial de instalación de sistema para puerta corrediza
-                riel doble «J», estos rodamientos se utilizan comúnmente en
-                puertas para closet
-              </p>
-            </div>
-            <div class="video-item">
-              <iframe
-                width="250"
-                height="200"
-                src="https://www.youtube.com/embed/SV5lM3ZRxTw?si=gfZh1MtdQ8s2iF8W"
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin"
-                allowfullscreen
-              ></iframe>
-              <p>Video tutorial de instalación de Ménsulas</p>
-            </div>
-            <div class="video-item">
-              <iframe
-                width="250"
-                height="200"
-                src="https://www.youtube.com/embed/4nB9zR97D9k?si=Qy3XsbwY7AwUUtCp"
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin"
-                allowfullscreen
-              ></iframe>
-              <p>
-                Video tutorial de instalación de sistema de puerta plegadiza,
-                estos rodamientos se utilizan comúnmente en puertas para closet
-              </p>
-            </div>
-            <div class="video-item">
-              <iframe
-                width="250"
-                height="200"
-                src="https://www.youtube.com/embed/_2rnZrrmjxQ?si=ocg-2Wfh2dvD6_Vr"
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin"
-                allowfullscreen
-              ></iframe>
-              <p>
-                Vídeo tutorial instalación de Correderas Extensión para mueble.
-              </p>
-            </div>
-            <div class="video-item">
-              <iframe
-                width="250"
-                height="200"
-                src="https://www.youtube.com/embed/4nB9zR97D9k?si=CKlrFXjm1T2DujRH"
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin"
-                allowfullscreen
-              ></iframe>
-              <p>
-                En este video veremos paso por paso la instalación de nuestro
-                pistón Handy Home en las puertas de gabinetes.
-              </p>
+            <div class="buttonContainer">
+              <button class="button btn-2">
+                Optimización de cortes<i class="fas fa-chevron-right icon"></i>
+              </button>
+              <button class="button btn-2">
+                Enchapados de cantos<i class="fas fa-chevron-right icon"></i>
+              </button>
+              <button class="button btn-2">
+                Mecanizados en CNC<i class="fas fa-chevron-right icon"></i>
+              </button>
             </div>
           </section>
+          <section id="nuestra_tecnologia" class="b4 section">
+            <!-- Slider de imágenes -->
+            <div class="slider">
+              <div class="slide">
+                <img
+                  src="https://mdfmaderas.com/wp-content/uploads/2020/09/enchapadora2-2.png"
+                  alt="Area de produccions"
+                />
+                <div class="caption">
+                  <h3>Area de produccion de alto volumen</h3>
+                </div>
+              </div>
+              <div class="slide">
+                <img
+                  src="https://mdfmaderas.com/wp-content/uploads/2020/09/CNC.png"
+                  alt="Tech 3"
+                />
+                <div class="caption">
+                  <h3>Enchapado perfecto con tecnología Alemana</h3>
+                </div>
+              </div>
+              <div class="slide">
+                <img
+                  src="https://mdfmaderas.com/wp-content/uploads/2020/09/dimensionadora.png"
+                  alt="Tech 4"
+                />
+                <div class="caption">
+                  <h3>
+                    Tecnología CNC unica aqui en Hermosillo a tu disposicion
+                  </h3>
+                </div>
+              </div>
+              <div class="slide">
+                <img
+                  src="https://mdfmaderas.com/wp-content/uploads/2020/09/Captura-de-Pantalla-2020-10-20-a-las-18.02.14.png"
+                  alt="Tech 5"
+                />
+                <div class="caption">
+                  <h3>
+                    Cortes simplemente perfectos solo en
+                    <strong>MDF MADERAS</strong>
+                  </h3>
+                </div>
+              </div>
+            </div>
+            <button class="prev" onclick="moveSlide(-1)">
+              <i class="fas fa-chevron-left icon"></i>
+            </button>
+            <button class="next" onclick="moveSlide(1)">
+              <i class="fas fa-chevron-right icon"></i>
+            </button>
+          </section>
         </section>
-      </section>
+
+        <section id="servicios">
+          <nav class="side-menu">
+            <ul>
+              <li><a href="#optimizacion">Optimización</a></li>
+              <li><a href="#cortes">Cortes</a></li>
+              <li><a href="#tutoriales">Tutoriales</a></li>
+            </ul>
+          </nav>
+
+          <section id="optimizacion" class="b1 section">
+            <h1>Optimización</h1>
+            <p>
+              ¿Sabes los beneficios de nuestro servicio de optimización de
+              cortes?
+            </p>
+            <ul>
+              <li>
+                Conoce cuantos tableros necesitas para realizar tu proyecto
+              </li>
+              <li>
+                Opten el mayor aprovechamiento de las dimensiones de los
+                tableros
+              </li>
+              <li>Cotiza en linea o directo en tienda</li>
+              <li>
+                Conoce el precio final de materia prima y servicio de todo tu
+                proyecto, para que puedas cotizar a tus clientes
+              </li>
+              <li>Etiqueta tus piezas cortadas para identificarlas</li>
+              <li>
+                Ahorra tiempo de armado solicitando el servicio de flejado por
+                modulos
+              </li>
+            </ul>
+
+            <p>
+              Crea libremente con los mas de 80 diseños y colores que tenemos en
+              tableros de melamina que te permitirán crear espacios estéticos y
+              en tendencia.
+            </p>
+            <p>Contamos con marcas como:</p>
+            <ul>
+              <li>MASISA</li>
+              <li>CUBRICA</li>
+              <li>DURAPLAY</li>
+              <li>REHAU (Distribuidores oficiales)</li>
+              <li>MUY PRONTO TECNOTABLA (Distribuidores oficiales)</li>
+            </ul>
+          </section>
+          <section id="cortes" class="b2 section">
+            <h1>Cortes</h1>
+            <p>
+              Te presentamos nuestra área de corte y enchapado, aquí es donde
+              nuestro equipo trabaja tus proyectos con maquinaria de punta para
+              ofrecerte cortes perfectos y la mejor calidad en recubrimiento de
+              cantos.
+            </p>
+            <ul>
+              <li>
+                Cortes perfectos y limpios debido a su sistema automatizado
+              </li>
+              <li>
+                Diferenciamos cada pieza para facilitar su reconocimiento con un
+                proceso de etiquetado
+              </li>
+              <li>Tu proyecto se realiza en menos tiempo.</li>
+              <li>Optimizamos el uso del tablero</li>
+            </ul>
+            <p>Contamos con:</p>
+            <ul>
+              <li>¡Garantía 100% de calidad!</li>
+            </ul>
+            <p>
+              Sabemos que lo mas importante es la calidad de nuestro servicio,
+              por eso confía en los mejores y comprueba que tus cantos de PVC
+              salen sin defectos perfilados y redondeados.
+            </p>
+            <p>
+              Compruébalo tu mismo!, y ofrece a tus clientes un excelente
+              acabado en cada uno de tus muebles, maquila tus proyectos en MDF
+              maderas ¡Todo para el carpintero!
+            </p>
+          </section>
+          <section id="tutoriales" class="b3 section">
+            <h1>Tutoriales</h1>
+            <p>
+              Aprende a realizar muebles, ensamblar piezas, poner manijas y
+              muchas cosas más de forma profesional.
+            </p>
+            <section id="video-gallery" class="video-gallery">
+              <div class="video-item">
+                <iframe
+                  width="250"
+                  height="200"
+                  src="https://www.youtube.com/embed/kBeDZkdXgM0?si=BS9FsTrPkRhsImCM"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen
+                ></iframe>
+                <p>
+                  Tutorial de instalación de cajones con correderas de extensión
+                  de cierre suave en un ensamblado simple
+                </p>
+              </div>
+              <div class="video-item">
+                <iframe
+                  width="250"
+                  height="200"
+                  src="https://www.youtube.com/embed/aPUhB5fXY3k?si=uBl9B1HAdFsGySAG"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen
+                ></iframe>
+                <p>
+                  Video tutorial de instalación de sistema para puerta corrediza
+                  riel doble «J», estos rodamientos se utilizan comúnmente en
+                  puertas para closet
+                </p>
+              </div>
+              <div class="video-item">
+                <iframe
+                  width="250"
+                  height="200"
+                  src="https://www.youtube.com/embed/SV5lM3ZRxTw?si=gfZh1MtdQ8s2iF8W"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen
+                ></iframe>
+                <p>Video tutorial de instalación de Ménsulas</p>
+              </div>
+              <div class="video-item">
+                <iframe
+                  width="250"
+                  height="200"
+                  src="https://www.youtube.com/embed/4nB9zR97D9k?si=Qy3XsbwY7AwUUtCp"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen
+                ></iframe>
+                <p>
+                  Video tutorial de instalación de sistema de puerta plegadiza,
+                  estos rodamientos se utilizan comúnmente en puertas para
+                  closet
+                </p>
+              </div>
+              <div class="video-item">
+                <iframe
+                  width="250"
+                  height="200"
+                  src="https://www.youtube.com/embed/_2rnZrrmjxQ?si=ocg-2Wfh2dvD6_Vr"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen
+                ></iframe>
+                <p>
+                  Vídeo tutorial instalación de Correderas Extensión para
+                  mueble.
+                </p>
+              </div>
+              <div class="video-item">
+                <iframe
+                  width="250"
+                  height="200"
+                  src="https://www.youtube.com/embed/4nB9zR97D9k?si=CKlrFXjm1T2DujRH"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen
+                ></iframe>
+                <p>
+                  En este video veremos paso por paso la instalación de nuestro
+                  pistón Handy Home en las puertas de gabinetes.
+                </p>
+              </div>
+            </section>
+          </section>
+        </section>
+      </main>
 
       <section id="contactanos">
         <h2>Contáctanos</h2>
@@ -321,16 +379,14 @@
     </div>
 
     <!-- MODAL -->
-    <div id="modal" class="modal">
+    <div class="modal" id="modal">
       <div class="modal-content">
-        <span class="close" id="close-modal">&times;</span>
-        <div class="modal-body">
-          <img id="modal-img" alt="Imagen" />
-          <div>
-            <h2 id="modal-title" class="modal-title"></h2>
-            <p id="modal-text" class="modal-text"></p>
-          </div>
+        <img src="" alt="Modal Image" id="modal-img" />
+        <div class="text-content">
+          <h2 id="modal-title"></h2>
+          <p id="modal-text"></p>
         </div>
+        <button class="modal-close" id="close-modal">X</button>
       </div>
     </div>
     <script src="/js/script.js"></script>

@@ -148,10 +148,17 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("modal-img").src = data.img;
     document.getElementById("modal-text").innerText = data.text;
     document.getElementById("modal").style.display = "flex";
+
+    modal.classList.add('show');
+    modal.classList.remove('hide');
   }
 
   function closeModal() {
-    document.getElementById("modal").style.display = "none";
+    modal.classList.add('hide');
+    modal.classList.remove('show');
+    setTimeout(() => {
+      modal.style.display = 'none';
+    }, 500); // Tiempo de la animación
   }
 
   window.onclick = function (event) {
@@ -171,4 +178,64 @@ document.addEventListener("DOMContentLoaded", function () {
 
     document.getElementById("close-modal").addEventListener("click", closeModal);
   };
+
+  // SLIDER
+  const slides = document.querySelectorAll(".slide");
+  let currentSlide = 0;
+  const slideInterval = setInterval(nextSlide, 5000); // Cambiar a 5 segundos
+
+  function nextSlide() {
+    slides[currentSlide].classList.remove("active");
+    slides[currentSlide].classList.add("fade-out");
+    currentSlide = (currentSlide + 1) % slides.length;
+    slides[currentSlide].classList.add("fade-in");
+    slides[currentSlide].classList.add("active");
+    setTimeout(() => {
+      slides.forEach(slide => slide.classList.remove("fade-in", "fade-out"));
+    }, 1000); // Duración de la animación de desvanecimiento
+  }
+
+  const prevButton = document.querySelector(".prev");
+  const nextButton = document.querySelector(".next");
+
+  if (prevButton && nextButton) {
+    prevButton.addEventListener("click", function () {
+      slides[currentSlide].classList.remove("active");
+      slides[currentSlide].classList.add("fade-out");
+      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+      slides[currentSlide].classList.add("fade-in");
+      slides[currentSlide].classList.add("active");
+      setTimeout(() => {
+        slides.forEach(slide => slide.classList.remove("fade-in", "fade-out"));
+      }, 1000); // Duración de la animación de desvanecimiento
+    });
+
+    nextButton.addEventListener("click", function () {
+      slides[currentSlide].classList.remove("active");
+      slides[currentSlide].classList.add("fade-out");
+      currentSlide = (currentSlide + 1) % slides.length;
+      slides[currentSlide].classList.add("fade-in");
+      slides[currentSlide].classList.add("active");
+      setTimeout(() => {
+        slides.forEach(slide => slide.classList.remove("fade-in", "fade-out"));
+      }, 1000); // Duración de la animación de desvanecimiento
+    });
+  }
+
+  // Mostrar el caption al pasar el puntero
+  slides.forEach(slide => {
+    slide.addEventListener("mouseenter", function () {
+      const caption = this.querySelector(".caption");
+      if (caption) {
+        caption.style.opacity = "1";
+      }
+    });
+
+    slide.addEventListener("mouseleave", function () {
+      const caption = this.querySelector(".caption");
+      if (caption) {
+        caption.style.opacity = "0";
+      }
+    });
+  });
 });
