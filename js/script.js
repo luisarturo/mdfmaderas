@@ -43,6 +43,18 @@ document.addEventListener("DOMContentLoaded", function () {
         hideAllSubSections(subSectionsInicio); // Oculta subsecciones de Inicio si venías de ahí
         hideAllSubSections(subSectionsServicio);
         selectFirstSideMenuOption(sideMenuServicio, subSectionsServicio);
+      } else if (targetId === "contactanos") {
+        const sliderSection = document.getElementById("form__wrap");
+        const sliderContact = document.getElementById("contact__info");
+        if (sliderSection && sliderContact) {
+          sliderSection.style.display = "block";
+          sliderContact.style.display = "block";
+        }
+        // Enfocar el input "nombre"
+        const nombreInput = document.querySelector(".contact-form input[name='nombre']");
+        if (nombreInput) {
+          nombreInput.focus();
+        }
       }
     }
   }
@@ -139,16 +151,58 @@ document.addEventListener("DOMContentLoaded", function () {
       title: "Mecanizado con CNC",
       img: "/image/MECANIZADO-CNC-800x826.png",
       text: `Perforamos los tableros de manera exacta, para que puedas colocar más fácilmente los taquetes. Contamos con maquinaria CNC; especial para hacer este tipo de perforaciones con exactitud de longitud y profundidad para la colocación de tornillos y taquetes.`
+    },
+    {
+      title: "Instalación de cajones",
+      video: "https://youtu.be/kBeDZkdXgM0?si=CueEDYS3O1YLeFn1",
+      text: `Tutorial de instalación de cajones con correderas de extensión de cierre suave en un ensamblado simple.`
+    },
+    {
+      title: "Instalación para puertas corredizas",
+      video: "https://youtu.be/aPUhB5fXY3k",
+      text: `Video tutorial de instalación de sistema para puerta corrediza riel doble «J», estos rodamientos se utilizan comúnmente en puertas para closet.`
+    },
+    {
+      title: "Instalación de ménsulas",
+      video: "https://youtu.be/SV5lM3ZRxTw",
+      text: `Video tutorial de instalación de Ménsulas.`
+    },
+    {
+      title: "Instalación de puertas plegadizas",
+      video: "https://youtu.be/4nB9zR97D9k",
+      text: `Video tutorial de instalación de sistema de puerta plegadiza, estos rodamientos se utilizan comúnmente en puertas para closet.`
+    },
+    {
+      title: "Instalación de corredoras",
+      video: "https://youtu.be/_2rnZrrmjxQ",
+      text: `Vídeo tutorial instalación de Correderas Extensión para mueble.`
+    },
+    {
+      title: "Instalación de nuestro pistón Handy Home",
+      video: "https://youtu.be/4nB9zR97D9k",
+      text: `En este video veremos paso por paso la instalación de nuestro pistón Handy Home en las puertas de gabinetes.`
     }
   ];
 
   function openModal(index) {
     const data = modalData[index];
     document.getElementById("modal-title").innerText = data.title;
-    document.getElementById("modal-img").src = data.img;
     document.getElementById("modal-text").innerText = data.text;
-    document.getElementById("modal").style.display = "flex";
 
+    const modalImg = document.getElementById("modal-img");
+    const modalVideo = document.getElementById("modal-video");
+
+    if (data.img) {
+      modalImg.src = data.img;
+      modalImg.style.display = "block";
+      modalVideo.style.display = "none";
+    } else if (data.video) {
+      modalVideo.src = data.video;
+      modalVideo.style.display = "block";
+      modalImg.style.display = "none";
+    }
+
+    document.getElementById("modal").style.display = "flex";
     modal.classList.add('show');
     modal.classList.remove('hide');
   }
@@ -158,6 +212,7 @@ document.addEventListener("DOMContentLoaded", function () {
     modal.classList.remove('show');
     setTimeout(() => {
       modal.style.display = 'none';
+      document.getElementById("modal-video").src = ""; // Detener el video
     }, 500); // Tiempo de la animación
   }
 
@@ -169,7 +224,7 @@ document.addEventListener("DOMContentLoaded", function () {
   };
 
   window.onload = function () {
-    const buttons = document.querySelectorAll(".buttonContainer button");
+    const buttons = document.querySelectorAll(".buttonContainer button, .videos-tutoriales button");
     buttons.forEach((button, index) => {
       button.addEventListener("click", function () {
         openModal(index);
@@ -179,63 +234,17 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("close-modal").addEventListener("click", closeModal);
   };
 
-  // SLIDER
-  const slides = document.querySelectorAll(".slide");
-  let currentSlide = 0;
-  const slideInterval = setInterval(nextSlide, 5000); // Cambiar a 5 segundos
-
-  function nextSlide() {
-    slides[currentSlide].classList.remove("active");
-    slides[currentSlide].classList.add("fade-out");
-    currentSlide = (currentSlide + 1) % slides.length;
-    slides[currentSlide].classList.add("fade-in");
-    slides[currentSlide].classList.add("active");
-    setTimeout(() => {
-      slides.forEach(slide => slide.classList.remove("fade-in", "fade-out"));
-    }, 1000); // Duración de la animación de desvanecimiento
-  }
-
-  const prevButton = document.querySelector(".prev");
-  const nextButton = document.querySelector(".next");
-
-  if (prevButton && nextButton) {
-    prevButton.addEventListener("click", function () {
-      slides[currentSlide].classList.remove("active");
-      slides[currentSlide].classList.add("fade-out");
-      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-      slides[currentSlide].classList.add("fade-in");
-      slides[currentSlide].classList.add("active");
-      setTimeout(() => {
-        slides.forEach(slide => slide.classList.remove("fade-in", "fade-out"));
-      }, 1000); // Duración de la animación de desvanecimiento
-    });
-
-    nextButton.addEventListener("click", function () {
-      slides[currentSlide].classList.remove("active");
-      slides[currentSlide].classList.add("fade-out");
-      currentSlide = (currentSlide + 1) % slides.length;
-      slides[currentSlide].classList.add("fade-in");
-      slides[currentSlide].classList.add("active");
-      setTimeout(() => {
-        slides.forEach(slide => slide.classList.remove("fade-in", "fade-out"));
-      }, 1000); // Duración de la animación de desvanecimiento
-    });
-  }
-
-  // Mostrar el caption al pasar el puntero
-  slides.forEach(slide => {
-    slide.addEventListener("mouseenter", function () {
-      const caption = this.querySelector(".caption");
-      if (caption) {
-        caption.style.opacity = "1";
-      }
-    });
-
-    slide.addEventListener("mouseleave", function () {
-      const caption = this.querySelector(".caption");
-      if (caption) {
-        caption.style.opacity = "0";
-      }
-    });
+  // Configuracion del Slider
+  var swiper = new Swiper(".mySwiper", {
+    effect: "cube",
+    grabCursor: true,
+    loop: true,
+    autoplay: {
+      delay: 2000,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+    },
   });
+
 });
