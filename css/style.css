@@ -184,7 +184,7 @@ nav {
   margin: 178px 20px;
   z-index: 100;
   background: var(--color-background-2);
-  border-radius: 10px; 
+  border-radius: 10px;
 }
 
 .side-menu ul {
@@ -291,12 +291,12 @@ side-menu li:hover::before,
 }
 
 /* Estilos de la sección Inicio */
-.inicio__quienes_somos .title{
+.inicio__quienes_somos .title {
   font-size: 2.188vw;
   line-height: 2.865vw;
   margin: 6.7vh 7.7vh 3.7vh;
   font-family: Sora;
-  font-style: normal;font-style: normal;
+  font-style: normal;
   font-weight: 100;
 }
 
@@ -330,7 +330,7 @@ side-menu li:hover::before,
 .inicio__que_hacemos-producto p,
 .inicio__que_hacemos-personal p,
 .inicio__que_hacemos-instalaciones p {
-  font-size: .938vw;
+  font-size: .935vw;
   line-height: 1.563vw;
   padding-left: .5vw;
 }
@@ -340,6 +340,7 @@ side-menu li:hover::before,
 .inicio__que_hacemos-instalaciones .fa {
   padding-top: 25px;
 }
+
 /* Estilos de la sección Servicios */
 .inicio__nuestra_tecnologia {
   overflow-y: hidden;
