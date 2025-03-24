@@ -1,4 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
   --color-base: #333;
@@ -6,8 +12,8 @@
   --color-enlace-hover: #75bd43;
   --color-texto: #FFF;
   --color-sidebar-menu: #afd962;
-  --font-primary: "Sora", sans-serif;
-  --font-secondary: "Sora", sans-serif;
+  --font-primary: "Lora", serif;
+  --font-secondary: "Lora", serif;
   --font-mono: 'Anonymous Pro', monospace;
   --color-background-1: rgba(0, 0, 0, 0.5);
   --color-background-2: rgba(0, 0, 0, 0.8);
