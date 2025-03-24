@@ -312,6 +312,34 @@ side-menu li:hover::before,
   margin-left: 3vw;
   width: 56vw;
 }
+
+.inicio__que_hacemos_container {
+  display: grid;
+  grid-template-columns: repeat(2, 430px);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 0px;
+  align-items: baseline;
+}
+
+.inicio__que_hacemos-producto,
+.inicio__que_hacemos-personal,
+.inicio__que_hacemos-instalaciones {
+  display: flex;
+}
+
+.inicio__que_hacemos-producto p,
+.inicio__que_hacemos-personal p,
+.inicio__que_hacemos-instalaciones p {
+  font-size: .938vw;
+  line-height: 1.563vw;
+  padding-left: .5vw;
+}
+
+.inicio__que_hacemos-producto .fa,
+.inicio__que_hacemos-personal .fa,
+.inicio__que_hacemos-instalaciones .fa {
+  padding-top: 25px;
+}
 /* Estilos de la sección Servicios */
 .inicio__nuestra_tecnologia {
   overflow-y: hidden;
