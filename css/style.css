@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Sometype+Mono:ital,wght@0,400..700;1,400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap');
 
 :root {
   --color-base: #333;
@@ -6,8 +6,8 @@
   --color-enlace-hover: #75bd43;
   --color-texto: #FFF;
   --color-sidebar-menu: #afd962;
-  --font-primary: 'Montserrat', sans-serif;
-  --font-secondary: 'Roboto', sans-serif;
+  --font-primary: "Sora", sans-serif;
+  --font-secondary: "Sora", sans-serif;
   --font-mono: 'Anonymous Pro', monospace;
   --color-background-1: rgba(0, 0, 0, 0.5);
   --color-background-2: rgba(0, 0, 0, 0.8);
@@ -78,6 +78,11 @@ li {
   margin-bottom: 0.5rem;
 }
 
+.fa {
+  margin-right: .5vw;
+  color: var(--color-enlace-hover)
+}
+
 
 /** END Globales **/
 
@@ -98,7 +103,7 @@ li {
   left: 0;
   width: 100%;
   height: 113%;
-  background-color: var(--color-background-2);
+  background-color: var(--color-background-1);
   z-index: 0;
   pointer-events: none;
 }
@@ -116,7 +121,7 @@ header {
 
 .logo {
   display: block;
-  padding: 0 10px;
+  padding: 28px 0 0 38px;
 }
 
 nav {
@@ -176,7 +181,10 @@ nav {
   transform: translateY(-50%);
   width: 250px;
   padding: 20px;
+  margin: 178px 20px;
   z-index: 100;
+  background: var(--color-background-2);
+  border-radius: 10px; 
 }
 
 .side-menu ul {
@@ -282,6 +290,28 @@ side-menu li:hover::before,
   opacity: 1;
 }
 
+/* Estilos de la sección Inicio */
+.inicio__quienes_somos .title{
+  font-size: 2.188vw;
+  line-height: 2.865vw;
+  margin: 6.7vh 7.7vh 3.7vh;
+  font-family: Sora;
+  font-style: normal;font-style: normal;
+  font-weight: 100;
+}
+
+.inicio__quienes_somos .title b {
+  font-size: 2.200vw;
+  line-height: 2.865vw;
+}
+
+.inicio__quienes_somos .descripcion {
+  font-size: .938vw;
+  line-height: 1.563vw;
+  padding-left: 2vw;
+  margin-left: 3vw;
+  width: 56vw;
+}
 /* Estilos de la sección Servicios */
 .inicio__nuestra_tecnologia {
   overflow-y: hidden;
