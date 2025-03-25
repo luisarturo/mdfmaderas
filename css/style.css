@@ -137,7 +137,7 @@ li {
   left: 0;
   width: 100%;
   height: 113%;
-  background-color: var(--color-background-1);
+  background-color: rgb(0 0 0 / 5%);
   z-index: 0;
   pointer-events: none;
 }
@@ -364,13 +364,13 @@ side-menu li:hover::before,
   grid-template-rows: repeat(2, 1fr);
   grid-column-gap: 33px;
   margin-left: 16%;
-  margin: 0.7vh 31.7vh 6.7vh;
+  margin: 0.7vh 0.7vh 0.7vh 25.7vh;
   background-color: rgb(0 0 0 / 26%);
-  width: 52%;
+  width: 60%;
   height: 93%;
   border-radius: 10px;
   box-shadow: 0px 4px 11px 8px rgb(255 255 255 / 10%);
-  
+
 }
 
 .inicio__que_hacemos-producto,
@@ -411,6 +411,30 @@ side-menu li:hover::before,
   padding: 118px 0 20px 0;
 }
 
+.servicios__optimizacion_container .title {
+  margin: 0.7vh 7.7vh 0.7vh;
+}
+
+.servicios__optimizacion_container .texto,
+.servicio__cortes_container .texto,
+.servicios__tutoriales_container .texto {
+  font-size: 1.135vw;
+  line-height: 1.563vw;
+  padding-left: 4.2vw;
+}
+
+.servicio__cortes_container {
+  background-color: rgb(0 0 0 / 26%);
+  width: 72%;
+  height: 96%;
+  border-radius: 10px;
+  box-shadow: 0px 4px 11px 8px rgb(255 255 255 / 10%);
+  margin-left: 21px;
+  padding: 1px;
+  overflow-y: scroll;
+  scrollbar-width: none;
+}
+
 /* BUTTON */
 .buttonContainer {
   display: flex;
@@ -427,21 +451,22 @@ side-menu li:hover::before,
 }
 
 .buttonContainer .card:hover {
-  color:var(--color-enlace-hover)
+  color: var(--color-enlace-hover)
 }
 
 .inicio__nuestra_tecnologia_container {
   background-color: rgb(0 0 0 / 26%);
-  width: 76%;
   height: 55%;
   border-radius: 10px;
   box-shadow: 0px 4px 11px 8px rgb(255 255 255 / 10%);
   margin-left: 21px;
   margin-top: 25px;
-  padding: 20px;
+  display: flex;
+  width: 70%;
+  padding: 46px;
 }
 
-.inicio__nuestra_tecnologia .galeria{
+.inicio__nuestra_tecnologia .galeria {
   margin: 10px 20px;
   box-shadow: 0 4px 8px var(--color-background-3), 0 8px 16px var(--color-background-3);
   border-radius: 10px;
@@ -463,24 +488,36 @@ side-menu li:hover::before,
 
 .inicio__nuestra_tecnologia .galeria:hover {
   border: 1px solid var(--color-enlace-hover);
-  transform: scale(1.2);
+  transform: scale(1.1);
 }
 
-.inicio__nuestra_tecnologia .pie{
+.inicio__nuestra_tecnologia .pie {
   text-align: center;
   padding: 10px;
   background: var(--color-background-2);
   border-radius: 0 0 10px 10px;
-  height: 145px;
+  height: 133px;
 }
 
-.inicio__nuestra_tecnologia .pie p{
-  font-size: 17px;
+.inicio__nuestra_tecnologia .pie p {
+  font-size: 15px;
   text-transform: uppercase;
 }
+
 /* END Estilos de la sección Inicio */
 
 /* Estilos de la sección Servicios */
+.servicios__optimizacion_container {
+  background-color: rgb(0 0 0 / 26%);
+  width: 74%;
+  height: 89%;
+  border-radius: 10px;
+  box-shadow: 0px 4px 11px 8px rgb(255 255 255 / 10%);
+  padding: 20px;
+  overflow-y: scroll;
+  scrollbar-width: none;
+}
+
 .button a {
   display: block;
   text-decoration: none;
@@ -494,77 +531,6 @@ side-menu li:hover::before,
   margin-left: 8px;
 }
 
-.btn-2 {
-  width: 17rem;
-  height: 60px;
-  line-height: 42px;
-  padding: 0;
-  border: none;
-  background: var(--color-enlace-hover);
-  background: radial-gradient(circle, var(--color-enlace-hover), #4e8b2f);
-  font-size: 1.2rem;
-}
-
-.icon {
-  font-size: 24px;
-  margin-left: 8px;
-}
-
-.btn-2:hover .icon {
-  animation: pulse 1s infinite;
-}
-
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-    /* Tamaño original */
-  }
-
-  50% {
-    transform: scale(1.3);
-    /* Tamaño agrandado */
-  }
-
-  100% {
-    transform: scale(1);
-    /* Vuelve al tamaño original */
-  }
-}
-
-.btn-2:hover {
-  color: var(--color-enlace-hover);
-  background: transparent;
-  box-shadow: none;
-}
-
-.btn-2:before,
-.btn-2:after {
-  content: '';
-  position: absolute;
-  top: 0;
-  right: 0;
-  height: 2px;
-  width: 0;
-  background: var(--color-enlace-hover);
-  box-shadow:
-    -1px -1px 5px 0px #fff,
-    7px 7px 20px 0px #0003,
-    4px 4px 5px 0px #0002;
-  transition: 400ms ease all;
-}
-
-.btn-2:after {
-  right: inherit;
-  top: inherit;
-  left: 0;
-  bottom: 0;
-}
-
-.btn-2:hover:before,
-.btn-2:hover:after {
-  width: 100%;
-  transition: 800ms ease all;
-}
 
 /* MODAL */
 .modal {
@@ -608,7 +574,7 @@ side-menu li:hover::before,
 
 .modal-content .text-content {
   padding: 20px;
-  width: 50%;
+  width: 77%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -683,70 +649,8 @@ side-menu li:hover::before,
   animation: slideOut 0.5s ease-in-out forwards;
 }
 
-/* Slider */
-.swiper {
-  width: 1012px;
-  height: 698px;
-  position: absolute;
-  left: 15%;
-  top: 32%;
-  margin-left: -150px;
-  margin-top: -150px;
-}
+/* END Modal  */
 
-.swiper-slide {
-  background-position: center;
-  background-size: cover;
-  position: relative;
-}
-
-.swiper-slide img {
-  display: block;
-  width: 100%;
-}
-
-.swiper-pagination {
-  position: relative;
-}
-
-.swiper-pagination-bullet {
-  background-color: var(--color-texto);
-  opacity: .5;
-}
-
-.swiper-pagination-bullet-active {
-  background-color: var(--color-enlace-hover);
-}
-
-.swiper-button-next,
-.swiper-button-prev {
-  color: var(--color-texto);
-}
-
-.swiper-horizontal>.swiper-pagination-bullets,
-.swiper-pagination-bullets.swiper-pagination-horizontal,
-.swiper-pagination-custom,
-.swiper-pagination-fraction {
-  top: -21%;
-}
-
-.caption {
-  position: absolute;
-  top: 63%;
-  left: 0;
-  width: 100%;
-  background: var(--color-background-2);
-  color: var(--color-texto);
-  text-align: center;
-  padding: 10px 0;
-  font-size: 26.2px;
-}
-
-.swiper-cube .swiper-cube-shadow {
-  width: 0;
-}
-
-/* END Slider */
 
 /* Estilos de la sección Optimizacion */
 .servicios__optimizacion::-webkit-scrollbar {
@@ -800,16 +704,49 @@ side-menu li:hover::before,
 }
 
 /* Estilos de seccion tutoriales */
-.videos-tutoriales {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(300px, 497px));
-  gap: 25px;
-  justify-items: center;
+.servicios__tutoriales_container .texto {
+  padding-left: 0;
 }
 
-.button.btn-1 {
-  align-self: flex-start;
-  width: 26rem;
+.servicios__tutoriales_container {
+  background-color: rgb(0 0 0 / 26%);
+  width: 74%;
+  height: 63%;
+  border-radius: 10px;
+  box-shadow: 0px 4px 11px 8px rgb(255 255 255 / 10%);
+  padding: 20px;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  margin-top: 7%;
+}
+
+.videos-tutoriales {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(3, minmax(100px, 360px));
+  padding-bottom: 20px;
+  color: var(--color-base);
+}
+
+.videos-tutoriales .card {
+  padding: 15px;
+}
+
+.videos-tutoriales .card:hover {
+  transform: scale(1.07);
+  box-shadow: 0 8px 16px rgba(145, 24, 24, 0.1);
+  filter: none;
+  color: var(--color-enlace-hover)
+}
+
+.videos-tutoriales .card img {
+  max-width: 130px;
+  max-height: 50px;
+  transition: transform 0.3s ease;
+}
+
+.videos-tutoriales .card img:hover {
+  transform: scale(1.1);
 }
 
 /* Estilos del formulario de contacto */
@@ -840,6 +777,11 @@ side-menu li:hover::before,
   width: 100%;
   padding: 5px;
   font-size: .5em;
+}
+
+.input-group input::placeholder,
+.input-group textarea::placeholder {
+  color: var(--color-texto);
 }
 
 .input-group i {
@@ -898,7 +840,7 @@ side-menu li:hover::before,
 .contact-container {
   display: flex;
   justify-content: space-between;
-  background: var(--color-background-2);
+  background: rgb(0 0 0 / 26%);
   border-radius: 10px;
   width: 70%;
   margin: 0 auto;
@@ -910,33 +852,52 @@ side-menu li:hover::before,
 .contact-options {
   flex: 1;
   padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
   text-align: left;
-  border-right: .5px solid var(--color-texto);
 }
 
 .info-item {
   display: flex;
-  align-items: center;
-  margin-bottom: 40px;
+  align-items: flex-start;
+  gap: 15px;
+  padding: 15px;
 }
 
 .info-item i {
+  font-size: 28px;
   color: var(--color-enlace-hover);
-  font-size: 24px;
-  margin-right: 15px;
 }
 
-.info-item h3 {
+.info-item__position h3 {
   margin: 0;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   font-weight: bold;
   color: var(--color-texto);
 }
 
-.info-item p {
-  margin: 5px 0 0;
-  font-size: 1rem;
+.info-item__position p {
+  margin: 5px 52px 0 0;
+  font-size: 1.1rem;
   color: var(--color-texto);
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.social-icons a {
+  color: var(--color-texto);
+  font-size: 28px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icons a:hover {
+  transform: scale(1.2);
 }
 
 .info-item__position {
@@ -981,14 +942,32 @@ side-menu li:hover::before,
   /* WhatsApp color */
 }
 
-.button.btn-3 {
-  width: 70%;
-}
-
 .btn-position {
   text-align: center;
 }
 
+.pulse-effect {
+  border: none;
+  color: var(--color-texto);
+  padding: 10px 70px;
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: var(--color-enlace-hover);
+  transition: transform 0.3s ease-in-out;
+  font-size: 24px;
+}
+
+.pulse-effect:hover {
+  background-color: var(--color-sidebar-menu);
+}
+
+.pulse-effect:active {
+  transform: scale(0.9);
+}
+
+/* END Contacto */
+
+/* FOOTER */
 footer {
   position: fixed;
   bottom: 0;

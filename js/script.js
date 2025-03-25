@@ -154,32 +154,32 @@ document.addEventListener("DOMContentLoaded", function () {
     },
     {
       title: "Instalación de cajones",
-      video: "https://youtu.be/kBeDZkdXgM0?si=CueEDYS3O1YLeFn1",
+      video: "https://www.youtube.com/embed/kBeDZkdXgM0?si=MXsLllnOPp8hVHwk",
       text: `Tutorial de instalación de cajones con correderas de extensión de cierre suave en un ensamblado simple.`
     },
     {
       title: "Instalación para puertas corredizas",
-      video: "https://youtu.be/aPUhB5fXY3k",
-      text: `Video tutorial de instalación de sistema para puerta corrediza riel doble «J», estos rodamientos se utilizan comúnmente en puertas para closet.`
+      video: "https://www.youtube.com/embed/aPUhB5fXY3k?si=RiKRXVonEDT6kKMS",
+      text: `Video tutorial de instalación de sistema para puerta corrediza riel doble "J", estos rodamientos se utilizan comúnmente en puertas para closet.`
     },
     {
       title: "Instalación de ménsulas",
-      video: "https://youtu.be/SV5lM3ZRxTw",
+      video: "https://www.youtube.com/embed/SV5lM3ZRxTw?si=Hpjhv3wDDyu87sdv",
       text: `Video tutorial de instalación de Ménsulas.`
     },
     {
       title: "Instalación de puertas plegadizas",
-      video: "https://youtu.be/4nB9zR97D9k",
+      video: "https://www.youtube.com/embed/4nB9zR97D9k?si=aL7KVthZ8ULDGXW9",
       text: `Video tutorial de instalación de sistema de puerta plegadiza, estos rodamientos se utilizan comúnmente en puertas para closet.`
     },
     {
       title: "Instalación de corredoras",
-      video: "https://youtu.be/_2rnZrrmjxQ",
+      video: "https://www.youtube.com/embed/_2rnZrrmjxQ?si=XR09HSJSkdeFXv6Z",
       text: `Vídeo tutorial instalación de Correderas Extensión para mueble.`
     },
     {
       title: "Instalación de nuestro pistón Handy Home",
-      video: "https://youtu.be/4nB9zR97D9k",
+      video: "https://www.youtube.com/embed/4nB9zR97D9k?si=zUGF5JMaSkh2r15J",
       text: `En este video veremos paso por paso la instalación de nuestro pistón Handy Home en las puertas de gabinetes.`
     }
   ];
@@ -224,27 +224,15 @@ document.addEventListener("DOMContentLoaded", function () {
   };
 
   window.onload = function () {
-    const buttons = document.querySelectorAll(".buttonContainer .button, .videos-tutoriales button");
+    const buttons = document.querySelectorAll(".videos-tutoriales .card a");
     buttons.forEach((button, index) => {
-      button.addEventListener("click", function () {
-        openModal(index);
+      button.addEventListener("click", function (e) {
+        e.preventDefault();
+        openModal(index + 3); // Ajustar índice para coincidir con modalData
       });
     });
 
     document.getElementById("close-modal").addEventListener("click", closeModal);
   };
-
-  // Configuracion del Slider
-  var swiper = new Swiper(".mySwiper", {
-    effect: "cube",
-    grabCursor: true,
-    loop: true,
-    autoplay: {
-      delay: 2000,
-    },
-    pagination: {
-      el: ".swiper-pagination",
-    },
-  });
 
 });
