@@ -232,6 +232,15 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
 
+    // Agregar funcionalidad para los botones de la sección buttonContainer
+    const buttonContainerButtons = document.querySelectorAll(".buttonContainer .card a");
+    buttonContainerButtons.forEach((button, index) => {
+      button.addEventListener("click", function (e) {
+        e.preventDefault();
+        openModal(index); // Ajustar índice para coincidir con modalData
+      });
+    });
+
     document.getElementById("close-modal").addEventListener("click", closeModal);
   };
 
