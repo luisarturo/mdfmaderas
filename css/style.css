@@ -328,7 +328,7 @@ side-menu li:hover::before,
 .title {
   font-size: 2.188vw;
   line-height: 2.865vw;
-  margin: 1.7vh 7.7vh 3.7vh;
+  margin: 7.7vh 7.7vh 3.7vh;
   font-family: Sora;
   font-style: normal;
   font-weight: 100;
@@ -352,31 +352,35 @@ side-menu li:hover::before,
   width: 76%;
   height: 83%;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgb(255 255 255 / 10%);
+  box-shadow: 0px 4px 11px 8px rgb(255 255 255 / 10%);
   margin-left: 21px;
   padding: 20px 0;
+  margin-top: 25px;
 }
 
 .inicio__que_hacemos_container {
   display: grid;
   grid-template-columns: repeat(2, 430px);
   grid-template-rows: repeat(2, 1fr);
-  grid-column-gap: 0px;
+  grid-column-gap: 33px;
   margin-left: 16%;
-  margin: 1.7vh 24.7vh 3.7vh;
+  margin: 0.7vh 31.7vh 6.7vh;
   background-color: rgb(0 0 0 / 26%);
-  width: 55%;
-  height: 78%;
+  width: 52%;
+  height: 93%;
   border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 4px 8px rgb(255 255 255 / 10%);
+  box-shadow: 0px 4px 11px 8px rgb(255 255 255 / 10%);
+  
 }
 
 .inicio__que_hacemos-producto,
 .inicio__que_hacemos-personal,
 .inicio__que_hacemos-instalaciones,
-.inicio__que_hacemos-sector {
+.inicio__que_hacemos-sector,
+.inicio__nuestra_tecnologia {
   display: flex;
+  place-content: center;
+  flex-wrap: nowrap;
 }
 
 .inicio__que_hacemos-producto p,
@@ -399,21 +403,12 @@ side-menu li:hover::before,
 .inicio__nuestros_servicios_container {
   background-color: rgb(0 0 0 / 26%);
   width: 76%;
-  height: 83%;
+  height: 62%;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgb(255 255 255 / 10%);
+  box-shadow: 0px 4px 11px 8px rgb(255 255 255 / 10%);
   margin-left: 21px;
-  padding: 30px 0 20px 0;
-}
-
-/* Estilos de la sección Servicios */
-.inicio__nuestra_tecnologia {
-  overflow-y: hidden;
-  max-height: none;
-  box-sizing: unset;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-  margin-top: 50px;
+  margin-top: 25px;
+  padding: 118px 0 20px 0;
 }
 
 /* BUTTON */
@@ -431,6 +426,61 @@ side-menu li:hover::before,
   color: var(--color-base);
 }
 
+.buttonContainer .card:hover {
+  color:var(--color-enlace-hover)
+}
+
+.inicio__nuestra_tecnologia_container {
+  background-color: rgb(0 0 0 / 26%);
+  width: 76%;
+  height: 55%;
+  border-radius: 10px;
+  box-shadow: 0px 4px 11px 8px rgb(255 255 255 / 10%);
+  margin-left: 21px;
+  margin-top: 25px;
+  padding: 20px;
+}
+
+.inicio__nuestra_tecnologia .galeria{
+  margin: 10px 20px;
+  box-shadow: 0 4px 8px var(--color-background-3), 0 8px 16px var(--color-background-3);
+  border-radius: 10px;
+  float: left;
+  width: 300px;
+}
+
+.inicio__nuestra_tecnologia .galeria .foto {
+  background: var(--color-background-2);
+  border-radius: 10px 10px 0 0;
+}
+
+.inicio__nuestra_tecnologia .galeria img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+}
+
+.inicio__nuestra_tecnologia .galeria:hover {
+  border: 1px solid var(--color-enlace-hover);
+  transform: scale(1.2);
+}
+
+.inicio__nuestra_tecnologia .pie{
+  text-align: center;
+  padding: 10px;
+  background: var(--color-background-2);
+  border-radius: 0 0 10px 10px;
+  height: 145px;
+}
+
+.inicio__nuestra_tecnologia .pie p{
+  font-size: 17px;
+  text-transform: uppercase;
+}
+/* END Estilos de la sección Inicio */
+
+/* Estilos de la sección Servicios */
 .button a {
   display: block;
   text-decoration: none;
@@ -462,7 +512,6 @@ side-menu li:hover::before,
 
 .btn-2:hover .icon {
   animation: pulse 1s infinite;
-  /* Aplica la animación de pulso */
 }
 
 @keyframes pulse {
@@ -599,7 +648,6 @@ side-menu li:hover::before,
   -webkit-transition: all 3ms ease-in;
   -moz-transition: all 3ms ease-in;
   transition: all 3ms ease-in;
-  font-size: 22px;
 }
 
 @keyframes slideIn {

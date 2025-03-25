@@ -224,7 +224,7 @@ document.addEventListener("DOMContentLoaded", function () {
   };
 
   window.onload = function () {
-    const buttons = document.querySelectorAll(".buttonContainer button, .videos-tutoriales button");
+    const buttons = document.querySelectorAll(".buttonContainer .button, .videos-tutoriales button");
     buttons.forEach((button, index) => {
       button.addEventListener("click", function () {
         openModal(index);
