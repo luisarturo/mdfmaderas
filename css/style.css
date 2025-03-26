@@ -998,3 +998,123 @@ footer a {
   transition: color 0.3s ease;
   font-family: var(--font-primary);
 }
+
+.hamburger,
+.nav-logo{
+  display:none;
+}
+
+/* Responsive styles for max-width 768px */
+@media (max-width: 768px) {
+  header {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    
+  }
+
+  .logo {
+    display: none; /* Hide the original logo */
+  }
+
+  .hamburger,
+  .nav-logo{
+    display: block;
+  }
+
+  nav {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 70%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9); /* Black with 90% opacity */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 20px;
+    transition: left 0.3s ease-in-out;
+    z-index: 1000;
+  }
+
+  nav.active {
+    left: 0; /* Slide in the menu */
+  }
+
+  .menu {
+    flex-direction: column;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+  }
+
+  .menu li {
+    width: 100%;
+  }
+
+  .menu a {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    color: #fff;
+    text-align: left;
+    font-size: 1.2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .hamburger {
+    display: block;
+    cursor: pointer;
+    font-size: 2.5rem;
+    color: #fff;
+    z-index: 1100;
+    transition: transform 0.3s ease;
+  }
+
+  .hamburger.active {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    transform: rotate(45deg); /* Rotate to create an "X" effect */
+  }
+
+  .nav-logo {
+    display: block;
+    margin-bottom: 20px;
+  }
+
+  .hamburger {
+    display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 31px;
+        height: 26px;
+        cursor: pointer;
+        z-index: 1100;
+        padding: 10px;
+  }
+
+  .hamburger span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+
+  .hamburger.active span:nth-child(1) {
+    transform: rotate(80deg) translate(18px, 5px)
+  }
+
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active span:nth-child(3) {
+    transform: rotate(5deg) translate(-2px, -5px);
+  }
+}

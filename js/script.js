@@ -244,4 +244,12 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("close-modal").addEventListener("click", closeModal);
   };
 
+  const hamburger = document.querySelector(".hamburger");
+  const nav = document.querySelector("nav");
+
+  // Toggle the menu and apply the "X" effect when clicking the hamburger
+  hamburger.addEventListener("click", function () {
+    nav.classList.toggle("active");
+    hamburger.classList.toggle("active");
+  });
 });
