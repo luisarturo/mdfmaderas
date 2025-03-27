@@ -1003,6 +1003,10 @@ footer a {
 
 /* Responsive styles for max-width 768px */
 @media (max-width: 768px) {
+  #videoOverlay {
+    background-color: rgb(0 0 0 / 20%);
+  }
+
   header {
     flex-direction: row-reverse;
     justify-content: space-between;
@@ -1139,25 +1143,17 @@ footer a {
     margin-left: 0;
     box-shadow: none;
     border-radius: 0;
-  }
-
-  .title {
-    margin: 0.7vh 1.7vh 2.7vh;
-    line-height: 1;
-  }
-
-  .title,
-  .title b {
-    font-size: 23px;
+    overflow-y: scroll;
+    scrollbar-width: none;
   }
 
   .descripcion {
-    font-size: 16px;
-    line-height: 1.2;
+    font-size: 20px;
+    line-height: 1;
     padding-left: 2vw;
     margin-left: 0;
     width: 95%;
-    font-weight: 400;
+    font-weight: 300;
   }
 
   footer {
@@ -1166,8 +1162,6 @@ footer a {
     z-index: 99;
     background: var(--color-background-2);
   }
-
-  #videoBackground {}
 
   .side-menu {
     display: none;
@@ -1205,5 +1199,144 @@ footer a {
   .menu li:not(.open) .submenu {
     transition: max-height 600ms ease-in-out;
     /* Transition for closing */
+  }
+
+  .title {
+    font-size: 22px;
+    line-height: 1.2;
+    color: #ffffff;
+    margin: 10px 15px;
+  }
+
+  .title b {
+    font-size: 27px;
+  }
+
+  .descripcion {
+    font-size: 18px;
+    line-height: 1.4;
+    color: #e0e0e0;
+    padding-left: 10px;
+    margin-left: 0;
+    width: 93%;
+    font-weight: 300;
+  }
+
+  /* Cambiar a display flex */
+  .inicio__que_hacemos_container {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    margin: 0 auto;
+    width: 100%;
+    height: auto;
+    padding: 50px 0px 0px 0px;
+    box-shadow: none;
+    border-radius: 0;
+  }
+
+  .fa {
+    display: none;
+  }
+
+  /* Ajustar íconos y texto */
+  .inicio__que_hacemos-producto,
+  .inicio__que_hacemos-personal,
+  .inicio__que_hacemos-instalaciones,
+  .inicio__que_hacemos-sector {
+    width: 90%;
+    background-color: rgba(0, 0, 0, 0.2);
+    margin-bottom: 10px;
+    padding: 15px;
+    border: 1px solid var(--color-enlace-hover);
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    display: none;
+    margin: 2px;
+  }
+
+  .inicio__que_hacemos-producto p,
+  .inicio__que_hacemos-personal p,
+  .inicio__que_hacemos-instalaciones p,
+  .inicio__que_hacemos-sector p {
+    display: none;
+    margin-top: 10px;
+    font-size: 19px;
+    line-height: 1.5;
+    color: #fff;
+    margin: 0;
+    text-align: justify;
+  }
+
+  .inicio__que_hacemos-producto:hover,
+  .inicio__que_hacemos-personal:hover,
+  .inicio__que_hacemos-instalaciones:hover,
+  .inicio__que_hacemos-sector:hover {
+    background-color: rgba(117, 189, 67, 0.3);
+    transform: scale(1.02);
+  }
+
+  .inicio__que_hacemos-producto.active p,
+  .inicio__que_hacemos-personal.active p,
+  .inicio__que_hacemos-instalaciones.active p,
+  .inicio__que_hacemos-sector.active p {
+    display: block;
+  }
+
+  .inicio__que_hacemos-producto.active,
+  .inicio__que_hacemos-personal.active,
+  .inicio__que_hacemos-instalaciones.active,
+  .inicio__que_hacemos-sector.active {
+    display: block;
+  }
+
+  .inicio__que_hacemos-tabs {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--color-enlace-hover);
+  }
+
+  .inicio__que_hacemos-tab {
+    /* flex: 1; */
+    text-align: center;
+    padding: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--color-texto);
+    background-color: rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease-in-out;
+  }
+
+  .inicio__que_hacemos-tab:hover,
+  .inicio__que_hacemos-tab.active {
+    background-color: rgba(117, 189, 67, 0.3);
+    color: var(--color-enlace-hover);
+  }
+
+  .inicio__que_hacemos-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  .inicio__que_hacemos-producto:hover,
+  .inicio__que_hacemos-personal:hover,
+  .inicio__que_hacemos-instalaciones:hover,
+  .inicio__que_hacemos-sector:hover {
+    background-color: rgba(117, 189, 67, 0.3);
+  }
+
+  .inicio__que_hacemos-producto.active p,
+  .inicio__que_hacemos-personal.active p,
+  .inicio__que_hacemos-instalaciones.active p,
+  .inicio__que_hacemos-sector.active p {
+    display: block;
   }
 }

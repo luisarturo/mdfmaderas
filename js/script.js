@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (targetSubSection) {
       targetSubSection.style.display = "block";
       targetSubSection.classList.add("active");
-            }
+    }
   }
 
   function handleMenuClick(link, linksGroup) {
@@ -319,4 +319,38 @@ document.addEventListener("DOMContentLoaded", function () {
 
   submenuInicioLinks.forEach(link => handleSubmenuClick(link, "inicio"));
   submenuServiciosLinks.forEach(link => handleSubmenuClick(link, "servicios"));
+
+  const accordionSections = document.querySelectorAll(
+    ".inicio__que_hacemos-producto, .inicio__que_hacemos-personal, .inicio__que_hacemos-instalaciones, .inicio__que_hacemos-sector"
+  );
+
+  accordionSections.forEach(section => {
+    section.addEventListener("click", function () {
+      // Alternar la clase 'active' para mostrar/ocultar el contenido
+      this.classList.toggle("active");
+    });
+  });
+
+  const tabs = document.querySelectorAll(".inicio__que_hacemos-tab");
+  const tabContents = document.querySelectorAll(
+    ".inicio__que_hacemos-producto, .inicio__que_hacemos-personal, .inicio__que_hacemos-instalaciones, .inicio__que_hacemos-sector"
+  );
+
+  tabs.forEach((tab, index) => {
+    tab.addEventListener("click", function () {
+      // Quitar la clase 'active' de todas las pestañas y contenidos
+      tabs.forEach(t => t.classList.remove("active"));
+      tabContents.forEach(content => content.classList.remove("active"));
+
+      // Activar la pestaña y el contenido correspondiente
+      this.classList.add("active");
+      tabContents[index].classList.add("active");
+    });
+  });
+
+  // Activar la primera pestaña y contenido por defecto
+  if (tabs.length > 0 && tabContents.length > 0) {
+    tabs[0].classList.add("active");
+    tabContents[0].classList.add("active");
+  }
 });
