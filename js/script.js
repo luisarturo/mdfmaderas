@@ -55,6 +55,12 @@ document.addEventListener("DOMContentLoaded", function () {
         if (nombreInput) {
           nombreInput.focus();
         }
+
+        // Hide the navigation menu on small screens
+        if (window.innerWidth <= 768) {
+          nav.classList.remove("active");
+          hamburger.classList.remove("active");
+        }
       }
     }
   }
@@ -65,7 +71,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (targetSubSection) {
       targetSubSection.style.display = "block";
       targetSubSection.classList.add("active");
-    }
+            }
   }
 
   function handleMenuClick(link, linksGroup) {
@@ -252,4 +258,65 @@ document.addEventListener("DOMContentLoaded", function () {
     nav.classList.toggle("active");
     hamburger.classList.toggle("active");
   });
+
+  // Toggle submenu visibility
+  const menuItemsWithSubmenu = document.querySelectorAll(".menu > li > a");
+
+  menuItemsWithSubmenu.forEach(item => {
+    item.addEventListener("click", function (e) {
+      const submenu = this.nextElementSibling;
+      if (submenu && submenu.classList.contains("submenu")) {
+        e.preventDefault();
+        const parentLi = this.parentElement;
+
+        // Close other open submenus
+        document.querySelectorAll(".menu li.open").forEach(openLi => {
+          if (openLi !== parentLi) {
+            openLi.classList.remove("open");
+          }
+        });
+
+        // Toggle the current submenu
+        parentLi.classList.toggle("open");
+      }
+    });
+  });
+
+  const submenuLinks = document.querySelectorAll(".submenu a");
+  submenuLinks.forEach(link => {
+    link.addEventListener("click", function () {
+      const nav = document.querySelector("nav");
+      const hamburger = document.querySelector(".hamburger");
+      nav.classList.remove("active");
+      hamburger.classList.remove("active");
+    });
+  });
+
+  function handleSubmenuClick(link, mainSectionId) {
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
+      const targetId = this.getAttribute("href").substring(1);
+      showSubSection(targetId, document.querySelectorAll(`#${mainSectionId} > section`));
+
+      // Ensure the main section remains active
+      const mainSection = document.getElementById(mainSectionId);
+      if (mainSection) {
+        mainSection.style.display = "block";
+        mainSection.classList.add("active");
+      }
+
+      // Close the mobile menu
+      const nav = document.querySelector("nav");
+      const hamburger = document.querySelector(".hamburger");
+      nav.classList.remove("active");
+      hamburger.classList.remove("active");
+    });
+  }
+
+  // Relate submenu options to their main sections
+  const submenuInicioLinks = document.querySelectorAll(".menu > li:first-child .submenu a");
+  const submenuServiciosLinks = document.querySelectorAll(".menu > li:nth-child(2) .submenu a");
+
+  submenuInicioLinks.forEach(link => handleSubmenuClick(link, "inicio"));
+  submenuServiciosLinks.forEach(link => handleSubmenuClick(link, "servicios"));
 });
