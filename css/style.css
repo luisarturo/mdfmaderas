@@ -122,6 +122,7 @@ li {
   width: 100%;
   height: 111%;
   z-index: -2;
+  min-height: 100vh;
 }
 
 #videoOverlay {
@@ -995,7 +996,8 @@ footer a {
 }
 
 .hamburger,
-.nav-logo {
+.nav-logo,
+.submenu {
   display: none;
 }
 
@@ -1017,7 +1019,8 @@ footer a {
   }
 
   .hamburger,
-  .nav-logo {
+  .nav-logo,
+  .submenu {
     display: block;
   }
 
@@ -1050,7 +1053,8 @@ footer a {
   }
 
   .menu li {
-    display: block; /* Ensure each menu item is stacked */
+    display: block;
+    /* Ensure each menu item is stacked */
     position: relative;
   }
 
@@ -1132,29 +1136,28 @@ footer a {
 
   .inicio__quienes_somos_container {
     width: 100%;
-    height: 72%;
     margin-left: 0;
     box-shadow: none;
     border-radius: 0;
-    background: rgb(255 255 255 / 15%);
   }
 
   .title {
-    margin: 3.7vh 1.7vh 2.7vh;
-    line-height: 1.2;
-    font-size: 20px;
+    margin: 0.7vh 1.7vh 2.7vh;
+    line-height: 1;
   }
 
+  .title,
   .title b {
-    font-size: 20px;
+    font-size: 23px;
   }
 
   .descripcion {
-    font-size: 13px;
+    font-size: 16px;
     line-height: 1.2;
     padding-left: 2vw;
     margin-left: 0;
     width: 95%;
+    font-weight: 400;
   }
 
   footer {
@@ -1164,9 +1167,7 @@ footer a {
     background: var(--color-background-2);
   }
 
-  #videoBackground {
-    height: 100vh;
-  }
+  #videoBackground {}
 
   .side-menu {
     display: none;
@@ -1174,16 +1175,20 @@ footer a {
 
   /* Style for submenu */
   .menu .submenu {
-    display: none; /* Initially hide the submenu */
-    background-color:rgb(0 0 0 / 10%);
+    display: none;
+    /* Initially hide the submenu */
+    background-color: rgb(0 0 0 / 10%);
     list-style: none;
     padding: 10px 0;
     margin: 0;
     width: 100%;
     z-index: 1000;
-    max-height: 0; /* Start with height 0 */
-    overflow: hidden; /* Hide overflowing content */
-    transition: max-height 700ms ease-in-out; /* Transition for opening */
+    max-height: 0;
+    /* Start with height 0 */
+    overflow: hidden;
+    /* Hide overflowing content */
+    transition: max-height 700ms ease-in-out;
+    /* Transition for opening */
   }
 
   .menu .submenu a {
@@ -1191,11 +1196,14 @@ footer a {
   }
 
   .menu li.open .submenu {
-    display: block; /* Show submenu when parent is open */
-    max-height: 500px; /* Set a maximum height for the transition */
+    display: block;
+    /* Show submenu when parent is open */
+    max-height: 500px;
+    /* Set a maximum height for the transition */
   }
 
   .menu li:not(.open) .submenu {
-    transition: max-height 600ms ease-in-out; /* Transition for closing */
+    transition: max-height 600ms ease-in-out;
+    /* Transition for closing */
   }
 }
