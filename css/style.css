@@ -594,8 +594,8 @@ side-menu li:hover::before,
 
 .modal-close {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 4px;
+  right: -9px;
   background: transparent;
   border: none;
   font-size: 24px;
@@ -604,12 +604,22 @@ side-menu li:hover::before,
   z-index: 1000;
 }
 
-.modal-close:hover {
-  color: var(--color-base);
+.modal-close:hover:before {
+  color: var(--color-enlace-hover);
   cursor: pointer;
   -webkit-transition: all 3ms ease-in;
   -moz-transition: all 3ms ease-in;
   transition: all 3ms ease-in;
+}
+
+.modal-close::before {
+  content: "\f05c";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 100;
+  font-size: 1.5rem;
+  color: var(--color-base);
+  margin-top: .5px;
+  margin-right: -6px;
 }
 
 @keyframes slideIn {
@@ -1126,6 +1136,7 @@ footer a {
     padding: 0;
     margin-top: 28px;
     max-height: calc(129vh - 200px);
+    position: absolute;
   }
 
   .inicio__quienes_somos_container {
@@ -1153,6 +1164,17 @@ footer a {
     font-size: 12px;
     z-index: 99;
     background: var(--color-background-2);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  #inicio,
+  #servicios,
+  #contactanos {
+    padding-bottom: 80px;
+    /* Espacio para el footer */
   }
 
   .side-menu {
@@ -1353,7 +1375,7 @@ footer a {
 
   .buttonContainer .card {
     width: 249px;
-    height: 50px;
+    height: 54px;
   }
 
   .card {
@@ -1444,6 +1466,8 @@ footer a {
     margin-left: 8px;
     overflow-y: scroll;
     scrollbar-width: none;
+    border-radius: unset;
+    box-shadow: none;
   }
 
   .servicios__tutoriales_container {
@@ -1511,6 +1535,8 @@ footer a {
     display: flex;
     align-items: center;
     justify-content: center;
+    top: 10px;
+    right: 10px;
   }
 
   .modal-close::before {
@@ -1523,11 +1549,6 @@ footer a {
     margin-right: -6px;
   }
 
-  .modal-close:hover::before {
-    color: var(--color-enlace-hover);
-  }
-
-  /* Hide contact social icons and show nav social icons for small screens */
   .contact-social-icons {
     display: none;
   }
@@ -1547,15 +1568,10 @@ footer a {
 
   .nav-social-icons a {
     color: var(--color-texto);
-    font-size: 24px;
+    font-size: 26px;
     transition: color 0.3s ease;
   }
 
-  .nav-social-icons a:hover {
-    color: var(--color-enlace-hover);
-  }
-
-  /* Adjust input fields for mobile */
   .input-group {
     flex-direction: column;
     align-items: flex-start;
@@ -1564,9 +1580,8 @@ footer a {
 
   .input-group input,
   .input-group textarea {
-    font-size: 1rem;
-    width: 100%;
-    padding: 10px;
+    font-size: 14px;
+    font-weight: 200;
   }
 
   .input-group label {
@@ -1576,20 +1591,30 @@ footer a {
   }
 
   .contact-form {
-    width: 90%;
-    margin: 0 auto;
-    padding: 10px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
   }
 
   .contact-container {
+    position: absolute;
     flex-direction: column;
     width: 100%;
-    padding: 20px;
+    padding: 0;
+    background: unset;
+    border-radius: unset;
+    top: 0;
+    margin: 0;
+    transform: unset;
+    justify-content: unset;
   }
 
   .contact-options {
-    grid-template-columns: 1fr;
-    gap: 15px;
+    gap: 10px;
+    padding: 0;
+    display: flex;
+    margin: 16px 10px 0 10px;
   }
 
   .info-item {
@@ -1602,16 +1627,24 @@ footer a {
   }
 
   .info-item__position p {
-    font-size: 1rem;
+    font-size: 12px;
+    margin: 0;
   }
 
   .social-icons {
     justify-content: space-evenly;
     gap: 20px;
+    flex-wrap: unset;
+    bottom: 32px;
+    position: absolute;
+    align-items: unset;
   }
 
   .pulse-effect {
     font-size: 1.2rem;
-    padding: 10px 40px;
+  }
+
+  .input-group .fas {
+    display: none;
   }
 }
