@@ -465,7 +465,7 @@ side-menu li:hover::before,
 .inicio__nuestra_tecnologia .galeria {
   margin: 10px 20px;
   box-shadow: 0 4px 8px var(--color-background-3), 0 8px 16px var(--color-background-3);
-  border-radius: 10px;
+  border-radius: 10px 10px 0 0;
   float: left;
   width: 300px;
 }
@@ -997,7 +997,8 @@ footer a {
 
 .hamburger,
 .nav-logo,
-.submenu {
+.submenu,
+.inicio__que_hacemos-tabs {
   display: none;
 }
 
@@ -1236,10 +1237,6 @@ footer a {
     border-radius: 0;
   }
 
-  .fa {
-    display: none;
-  }
-
   /* Ajustar íconos y texto */
   .inicio__que_hacemos-producto,
   .inicio__que_hacemos-personal,
@@ -1339,4 +1336,204 @@ footer a {
   .inicio__que_hacemos-sector.active p {
     display: block;
   }
+
+  .inicio__que_hacemos-producto.active .fa,
+  .inicio__que_hacemos-personal.active .fa,
+  .inicio__que_hacemos-instalaciones .fa,
+  .inicio__que_hacemos-sector.active .fa {
+    display: none;
+  }
+
+  .inicio__nuestros_servicios_container {
+    width: 100%;
+    height: 100%;
+    border-radius: unset;
+    box-shadow: none;
+    margin-left: 0;
+    margin-top: 0;
+    padding: 0;
+  }
+
+  .buttonContainer {
+    margin-top: 20px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .buttonContainer .card {
+    width: 249px;
+    height: 50px;
+  }
+
+  .card {
+    padding: 8px;
+  }
+
+  .inicio__nuestra_tecnologia_container {
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    padding: 20px;
+    margin: 0 auto;
+    height: auto;
+    overflow-y: scroll;
+    box-shadow: none;
+    border-radius: 0;
+  }
+
+  .inicio__nuestra_tecnologia .galeria {
+    width: 90%;
+    margin: 10px 0;
+    box-shadow: none;
+    border: none;
+    transition: none;
+  }
+
+  .inicio__nuestra_tecnologia .galeria img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+  }
+
+  .inicio__nuestra_tecnologia .galeria:hover {
+    transform: none;
+    border: none;
+  }
+
+  .inicio__nuestra_tecnologia .pie {
+    padding: 10px;
+    text-align: center;
+    background: var(--color-background-2);
+    border-radius: 0 0 10px 10px;
+  }
+
+  .inicio__nuestra_tecnologia .pie p {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+  .inicio__nuestra_tecnologia .pie p {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+  .servicios__optimizacion_container {
+    background-color: unset;
+    width: 90%;
+    height: unset;
+    border-radius: unset;
+    box-shadow: none;
+  }
+
+  .servicios__optimizacion_container .title {
+    margin: 0.7vh -0.3vh 0.7vh;
+  }
+
+  .servicios__optimizacion_container .texto,
+  .servicio__cortes_container .texto,
+  .servicios__tutoriales_container .texto {
+    font-size: 17px;
+    line-height: unset;
+    padding-left: unset;
+    font-weight: 300;
+  }
+
+  .logos-proveedores {
+    display: flex;
+    grid-template-columns: repeat(5, minmax(100px, 222px));
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .servicio__cortes_container {
+    background-color: unset;
+    width: 95%;
+    margin-left: 8px;
+    overflow-y: scroll;
+    scrollbar-width: none;
+  }
+
+  .servicios__tutoriales_container {
+    background-color: unset;
+    width: 96%;
+    height: unset;
+    border-radius: unset;
+    box-shadow: none;
+    padding: 7px;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    margin-top: 0%;
+  }
+
+  .videos-tutoriales {
+    display: flex;
+    grid-template-columns: repeat(3, minmax(100px, 360px));
+    align-content: center;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .videos-tutoriales .card {
+    padding: 9px;
+  }
+
+  .modal-content {
+    flex-direction: column;
+    padding: 10px;
+    max-height: 90%;
+  }
+
+  .modal-content img,
+  .modal-content iframe {
+    max-width: 100%;
+    max-height: 50%;
+    object-fit: contain;
+    display: block;
+  }
+
+  .modal-content .text-content {
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+  }
+
+  .modal-content .text-content h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+
+  .modal-content .text-content p {
+    font-size: 1rem;
+    line-height: 1.4;
+    width: 95%;
+  }
+
+  .modal-close {
+    font-size: 2rem;
+    color: var(--color-base);
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .modal-close::before {
+    content: "\f05c";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 100;
+    font-size: 1.5rem;
+    color: var(--color-texto);
+    margin-top: .5px;
+    margin-right: -6px;
+  }
+
+  .modal-close:hover::before {
+    color: var(--color-enlace-hover);
+  }
+
 }
