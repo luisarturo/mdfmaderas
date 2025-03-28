@@ -881,7 +881,7 @@ side-menu li:hover::before,
 
 .social-icons {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   gap: 15px;
   margin-top: 20px;
 }
@@ -899,18 +899,6 @@ side-menu li:hover::before,
 .info-item__position {
   display: flex;
   flex-direction: column;
-}
-
-.social-icons {
-  display: flex;
-  justify-content: space-around;
-  margin-top: 46px;
-}
-
-.social-icons a {
-  color: var(--color-texto);
-  font-size: 24px;
-  transition: color 0.3s ease;
 }
 
 .social-icons a:hover {
@@ -998,7 +986,8 @@ footer a {
 .hamburger,
 .nav-logo,
 .submenu,
-.inicio__que_hacemos-tabs {
+.inicio__que_hacemos-tabs,
+.nav-social-icons {
   display: none;
 }
 
@@ -1146,6 +1135,8 @@ footer a {
     border-radius: 0;
     overflow-y: scroll;
     scrollbar-width: none;
+    padding: unset;
+    background-color: unset;
   }
 
   .descripcion {
@@ -1293,7 +1284,7 @@ footer a {
   .inicio__que_hacemos-tabs {
     display: flex;
     justify-content: space-around;
-    margin-bottom: 15px;
+    margin-bottom: 56px;
     border-bottom: 2px solid var(--color-enlace-hover);
   }
 
@@ -1536,4 +1527,91 @@ footer a {
     color: var(--color-enlace-hover);
   }
 
+  /* Hide contact social icons and show nav social icons for small screens */
+  .contact-social-icons {
+    display: none;
+  }
+
+  .nav-social-icons {
+    display: flex;
+    gap: 40px;
+    margin-top: 10px;
+    align-items: center;
+    flex-wrap: nowrap;
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .nav-social-icons a {
+    color: var(--color-texto);
+    font-size: 24px;
+    transition: color 0.3s ease;
+  }
+
+  .nav-social-icons a:hover {
+    color: var(--color-enlace-hover);
+  }
+
+  /* Adjust input fields for mobile */
+  .input-group {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .input-group input,
+  .input-group textarea {
+    font-size: 1rem;
+    width: 100%;
+    padding: 10px;
+  }
+
+  .input-group label {
+    font-size: 0.9rem;
+    top: -10px;
+    left: 5px;
+  }
+
+  .contact-form {
+    width: 90%;
+    margin: 0 auto;
+    padding: 10px;
+  }
+
+  .contact-container {
+    flex-direction: column;
+    width: 100%;
+    padding: 20px;
+  }
+
+  .contact-options {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .info-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .info-item__position h3 {
+    font-size: 1.2rem;
+  }
+
+  .info-item__position p {
+    font-size: 1rem;
+  }
+
+  .social-icons {
+    justify-content: space-evenly;
+    gap: 20px;
+  }
+
+  .pulse-effect {
+    font-size: 1.2rem;
+    padding: 10px 40px;
+  }
 }
