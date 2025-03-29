@@ -1135,8 +1135,9 @@ footer a {
   .section {
     padding: 0;
     margin-top: 28px;
-    max-height: calc(129vh - 200px);
     position: absolute;
+    max-height: calc(100vh - 80px);
+    overflow-y: auto;
   }
 
   .inicio__quienes_somos_container {
